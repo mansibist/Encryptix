@@ -24,6 +24,10 @@ def equal():
  
 def clear():
     entry.delete(0,END)
+
+def backspace():
+    current=entry.get() 
+    entry.delete(len(current)-1,END)
  
  
 button_1 = Button(master=frame, text='1', padx=15,pady=5, width=5, command=lambda: input_value(1))
@@ -74,6 +78,9 @@ button_clear.grid(row=7, column=1, columnspan=2, pady=2)
  
 button_equal = Button(master=frame, text="=", padx=15,pady=5, width=5, command=equal)
 button_equal.grid(row=6, column=3,pady=2)
+
+button_backspace = Button(master=frame, text="<-",padx=15, pady=5, width=5, command=backspace)
+button_backspace.grid(row=7, column=3, pady=2)
  
 root.mainloop()
 
